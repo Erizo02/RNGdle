@@ -5,8 +5,9 @@ public class Main {
         RNG rng = new RNG();
 
         int[] numbers = rng.generateNumbers();
-        int score = ScoreManager.calculateScore(numbers);
-        System.out.println(Arrays.toString(numbers));
+        int[] displayNumbers = rng.removeLeadingZeros(numbers);
+        int score = ScoreManager.calculateScore(numbers, displayNumbers);
+        System.out.println(Arrays.toString(displayNumbers));
         System.out.println(score);
     }
 }
